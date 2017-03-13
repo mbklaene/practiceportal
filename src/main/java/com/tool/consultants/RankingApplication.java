@@ -8,5 +8,7 @@ public class RankingApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RankingApplication.class, args);
+		
+		//Testing git
 	}
 }
