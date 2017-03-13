@@ -2,7 +2,6 @@ package config;
 
 import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.excel.RowMapper;
-import org.springframework.batch.item.excel.mapping.BeanWrapperRowMapper;
 import org.springframework.batch.item.excel.poi.PoiItemReader;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
