@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Hello AngularJS</title>
-<link href="css/angular-bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style type="text/css">
 [ng\:cloak], [ng-cloak], .ng-cloak {
   display: none !important;
@@ -10,15 +10,41 @@
 </style>
 </head>
 
-<body ng-app="hello">
+<body ng-app="consultant">
   <div class="container">
     <h1>Greeting</h1>
-    <div ng-controller="hello" ng-cloak class="ng-cloak">
-      <p>The ID is {{greeting.id}}</p>
-      <p>The content is {{greeting.content}}</p>
+    <div ng-controller="consultant" ng-cloak class="ng-cloak">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+        	<th>Consultant Name</th>
+        	<th>Month</th>
+            <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+    	<tr ng-repeat ="x in consultant" ng-click = "setSelected(x)">
+    		<td>{{x.consultantName}}</td>
+    		<td>{{x.month}}</td>
+    		<td>{{x.amount}}</td>
+    	</tr>
+      </tbody>
+    </table>
+    
+    <input type="button" ng-click="add()" value="add" />
+    
+    <form novalidate class="simple-form" ng-show="visible">
+      <label>Name: <input type="text" ng-model="singleConsultant.consultantName" /></label><br />
+      <label>Month: <input type="text" ng-model="singleConsultant.month" /></label><br/>
+      <label>Year: <input type="text" ng-model="singleConsultant.amount" /></label><br/>
+      <input type="submit" ng-click="addToList(singleConsultant)" value="Save" />
+      <input type="button" ng-click="reset()" value="Reset" />
+    
+    </form>
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-  <script src="js/hello.js"></script>
+  <script src="js/consultants.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
